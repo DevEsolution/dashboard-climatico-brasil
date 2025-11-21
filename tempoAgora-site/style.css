@@ -1,0 +1,185 @@
+/* --- VARIÁVEIS GERAIS --- */
+:root {
+    --bg-dark: #0f172a; /* Slate 900 */
+}
+
+/* --- BACKGROUND ANIMADO --- */
+.main-background {
+    background: linear-gradient(240deg, #0c4a6e, #1e293b, #14532d);
+    background-size: 400% 400%;
+    animation: gradientAnimation 25s ease infinite;
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- EFEITO DE VIDRO (GLASSMORPHISM) --- */
+.glass-header, .glass-card, .glass-section {
+    background: rgba(15, 23, 42, 0.6); /* Fundo escuro com 60% de opacidade */
+    backdrop-filter: blur(12px);        /* Desfoque do fundo */
+    -webkit-backdrop-filter: blur(12px); /* Compatibilidade Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* --- ANIMAÇÕES E TRANSIÇÕES --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card-hover {
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0; /* Começa invisível para a animação funcionar */
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); /* Sombra mais forte no hover */
+    background: rgba(15, 23, 42, 0.75); /* Levemente mais opaco no hover */
+    border-color: rgba(56, 189, 248, 0.3); /* Borda azulada no hover */
+}
+
+/* Ícone de Pin (Alfinete) */
+.pin-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+.pin-icon:hover {
+    color: #facc15; /* Amarelo ao passar o mouse */
+    transform: scale(1.1);
+}
+.pin-icon.fa-solid {
+    color: #facc15; /* Amarelo quando ativo */
+    filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.5));
+}
+
+/* Animação de flutuação para ícones de clima */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* --- BOTÕES DENTRO DO CARD --- */
+.share-btn, .alert-btn {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.share-btn {
+    background-color: rgba(14, 165, 233, 0.15); /* Sky blue transparente */
+    color: #38bdf8;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+}
+.share-btn:hover {
+    background-color: rgba(14, 165, 233, 0.3);
+}
+
+.alert-btn {
+    background-color: rgba(239, 68, 68, 0.15); /* Red transparente */
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+.alert-btn:hover {
+    background-color: rgba(239, 68, 68, 0.3);
+}
+
+/* --- SCROLLBAR DOS FILTROS --- */
+.overflow-x-auto::-webkit-scrollbar {
+    height: 4px;
+}
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 2px;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+}
+
+/* --- CARROSSEL DE EMERGÊNCIA --- */
+#emergency-carousel {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+#emergency-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.carousel-slide {
+    flex: 0 0 100%; /* Ocupa 100% da largura em telas pequenas */
+    scroll-snap-align: start;
+}
+
+@media (min-width: 768px) { /* md */
+    .carousel-slide {
+        flex-basis: calc(50% - 0.75rem); /* 2 slides por vez */
+    }
+}
+@media (min-width: 1024px) { /* lg */
+    .carousel-slide {
+        flex-basis: calc(33.333% - 1rem); /* 3 slides por vez */
+    }
+}
+
+.carousel-arrow {
+    @apply absolute top-1/2 -translate-y-1/2 bg-slate-800/50 text-white w-10 h-10 rounded-full flex items-center justify-center transition hover:bg-slate-700/80;
+}
+
+/* --- ANIMAÇÕES DE ALERTA PARA O BOLETIM --- */
+@keyframes pulse-orange {
+    0%, 100% {
+        background-color: rgba(251, 146, 60, 0.1); /* bg-orange-400/10 */
+        border-color: rgba(251, 146, 60, 0.4); /* border-orange-400/40 */
+    }
+    50% {
+        background-color: rgba(251, 146, 60, 0.2); /* bg-orange-400/20 */
+        border-color: rgba(251, 146, 60, 0.6); /* border-orange-400/60 */
+    }
+}
+.animate-pulse-orange {
+    animation: pulse-orange 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse-red {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; /* Reutiliza a animação de pulso do Tailwind */
+}
+
+/* --- SLOTS DE ANÚNCIO --- */
+.ad-container {
+    width: 100%;
+}
+.ad-leaderboard {
+    min-height: 90px;
+    width: 100%;
+    max-width: 728px;
+    margin: 0 auto;
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.2);
+}

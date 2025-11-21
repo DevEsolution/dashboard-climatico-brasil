@@ -1,0 +1,49 @@
+{
+    "cities": [
+        { "id": 1, "cidade": "São Paulo", "uf": "SP", "lat": -23.55, "lon": -46.63, "type": "capital", "region": "Sudeste" },
+        { "id": 2, "cidade": "Rio de Janeiro", "uf": "RJ", "lat": -22.91, "lon": -43.20, "type": "capital", "region": "Sudeste" },
+        { "id": 3, "cidade": "Brasília", "uf": "DF", "lat": -15.78, "lon": -47.93, "type": "capital", "region": "Centro-Oeste" },
+        { "id": 4, "cidade": "Porto Alegre", "uf": "RS", "lat": -30.03, "lon": -51.23, "type": "capital", "region": "Sul" },
+        { "id": 5, "cidade": "Manaus", "uf": "AM", "lat": -3.12, "lon": -60.02, "type": "capital", "region": "Norte" },
+        { "id": 6, "cidade": "Belo Horizonte", "uf": "MG", "lat": -19.92, "lon": -43.94, "type": "capital", "region": "Sudeste" },
+        { "id": 13, "cidade": "Salvador", "uf": "BA", "lat": -12.97, "lon": -38.51, "type": "capital", "region": "Nordeste" },
+        { "id": 7, "cidade": "Sorriso", "uf": "MT", "lat": -12.54, "lon": -55.71, "type": "agricola", "crop": "Soja e Milho", "region": "Centro-Oeste" },
+        { "id": 8, "cidade": "Petrolina", "uf": "PE", "lat": -9.39, "lon": -40.50, "type": "agricola", "crop": "Fruticultura", "region": "Nordeste" },
+        { "id": 9, "cidade": "Rio Verde", "uf": "GO", "lat": -17.79, "lon": -50.92, "type": "agricola", "crop": "Soja e Milho", "region": "Centro-Oeste" },
+        { "id": 10, "cidade": "Luís Eduardo Magalhães", "uf": "BA", "lat": -12.09, "lon": -45.80, "type": "agricola", "crop": "Algodão e Soja", "region": "Nordeste" },
+        { "id": 11, "cidade": "Cascavel", "uf": "PR", "lat": -24.95, "lon": -53.45, "type": "agricola", "crop": "Soja e Trigo", "region": "Sul" },
+        { "id": 12, "cidade": "Lucas do Rio Verde", "uf": "MT", "lat": -13.05, "lon": -55.91, "type": "agricola", "crop": "Milho e Algodão", "region": "Centro-Oeste" }
+    ],
+    "emergencyServices": [
+        {
+            "name": "Defesa Civil",
+            "number": "199",
+            "description": "Responsável pela prevenção e resposta a desastres como enchentes, deslizamentos e tempestades severas.",
+            "icon": "fa-shield-halved"
+        },
+        {
+            "name": "Corpo de Bombeiros",
+            "number": "193",
+            "description": "Atua em resgates, salvamentos, combate a incêndios e socorro em acidentes relacionados a eventos climáticos.",
+            "icon": "fa-fire-extinguisher"
+        },
+        {
+            "name": "SAMU",
+            "number": "192",
+            "description": "Atendimento médico de urgência para acidentes e problemas de saúde graves que necessitem de socorro imediato.",
+            "icon": "fa-truck-medical"
+        },
+        {
+            "name": "Hospitais",
+            "number": "Procure o local",
+            "description": "Para emergências médicas complexas, traumas graves ou quando encaminhado por outro serviço de saúde.",
+            "icon": "fa-hospital"
+        },
+        {
+            "name": "UBS / Posto de Saúde",
+            "number": "Consulte o seu",
+            "description": "Atendimento para problemas de saúde não emergenciais, consultas, vacinação e acompanhamento de rotina.",
+            "icon": "fa-house-medical"
+        }
+    ]
+}
